@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Market Basket Analysis Results</title>
+    <style>
+      body {
+        background-color: azure;
+      }
+      td:nth-child(4),
+      th:nth-child(4),
+      td:nth-child(5),
+      th:nth-child(5),
+      td:nth-child(6),
+      th:nth-child(6),
+      td:nth-child(7),
+      th:nth-child(7),
+      td:nth-child(8),
+      th:nth-child(8),
+      td:nth-child(9),
+      th:nth-child(9),
+      td:nth-child(10),
+      th:nth-child(10),
+      td:nth-child(11),
+      th:nth-child(11) {
+        display: none;
+      }
+      th:nth-child(2),
+      th:nth-child(3) {
+        text-transform: capitalize;
+      }
+      table {
+        border-collapse: collapse;
+        width: 70%;
+        margin: 20px;
+        margin-left: 195px;
+        border: 2px solid;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        border: 2px solid;
+      }
+      th {
+        background-color: #2ce0e0;
+        color: black;
+        font-size: 24px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fffcfc;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      h1 {
+        color: rgb(128, 2, 128);
+      }
+      h2 {
+        color: rgb(1, 1, 173);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Market Basket Analysis Results</h1>
+    <h2>Association Rules</h2>
+    {{ rules|safe }}
+  </body>
+</html>

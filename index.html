@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Market Basket Analysis</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(249, 238, 222);
+        }
+        .navbar{
+            text-align: center;
+            color: #471975;
+            background-color: #95e5e5;
+            font-size: 28px;
+            box-shadow: 0px 0px 10px rgb(125, 125, 125);
+        }
+        ul{
+            display: inline-flex;
+            list-style: none;
+        }
+        .navbar ul li {
+            width: 550px;
+            margin: 10px;
+            padding: 15px;
+        }
+        .container{
+            padding-left: 470px;
+            margin-top: 50px;
+            align-items: center;
+        }
+        .form{
+            width: 600px;
+            height: 480px;
+            background-color: rgb(222, 246, 243);
+            border: 3px solid rgb(18, 240, 218);
+            border-radius: 15px ;
+            text-align: center;
+        }
+        .form .file{
+            display: flex;
+            flex-direction: row;
+            margin-top: 50px;
+            margin-left: 90px;
+            justify-content: space-around;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .form .file input[type=file]{
+            border-radius: 5px;
+            border: 2px solid black;
+            width: 250px;
+        }
+        .form .support{
+            display: flex;
+            flex-direction: row;
+            margin-top: 40px;
+            width: 340px;
+            margin-left: 125px;
+            justify-content: space-between;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .form .support input[type=number], select {
+            padding: 10px 15px;
+            display: inline-block;
+            border: 1px solid #626262;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form .confidence{
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            width: 340px;
+            margin-left: 125px;
+            justify-content: space-between;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .form .confidence input[type=number], select {
+            padding: 10px 15px;
+            display: inline-block;
+            border: 1px solid #626262;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form .button{
+            width: 160px;
+            height: 60px;
+            margin-top: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid rgb(4, 179, 222);
+            background-color: rgb(81, 209, 241);
+            box-shadow: 2px 2px 25px -7px rgb(4, 179, 222);
+            transition-duration: 0.2s;
+        }
+        .form .button:hover{
+            box-shadow: 0 0 5px #95e5e5, 0 0 10px #95e5e5, 0 0 15px #95e5e5, 0 0 20px #95e5e5;
+        }
+        .form .button:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+<body>  
+    <nav class="navbar">
+        <ul>
+            <li>
+                <h1 class="header">Market Basket Analysis</h1>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+    <form class="form" method="POST" enctype="multipart/form-data">
+        <div></div>
+        <br>
+        <div class="file">
+            <p>Upload file:</p>
+            <input type="file" name="file" required>
+        </div>
+        <br>
+        <div class="support">
+            <p>Minimum support:</p>
+            <input type="number" name="min_support" step="0.01" min="0" max="1" value="0.05" required>
+        </div>
+        <br>
+        <div class="confidence">
+            <label>Minimum confidence:</label>
+            <input type="number" name="min_confidence" step="0.01" min="0" max="1" value="0.5" required>
+        </div>
+        <br>
+        <br>
+        <input class="button" type="submit" value="Analyze">
+    </form>
+    </div>
+</body>
+</html>
